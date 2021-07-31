@@ -43,18 +43,6 @@ class App extends PureComponent {
     });
   };
 
-  deleteTodo = (todo) => {
-    this.setState( ({ todoList}) => {
-      const index = todoList.findIndex((item) => item.id === todo.id);
-      return {
-        todoList: [
-          ...todoList.slice(0, index),
-          ...todoList.slice(index+1),
-        ]
-      }
-    } );
-  }
-
   render() {
     console.log("render");
     const { todoText, todoList } = this.state;
@@ -84,7 +72,7 @@ class App extends PureComponent {
                 >
                   {todo.text}
                 </span>
-                <button type="button" onClick={() => this.deleteTodo(todo)} >Delete Todo</button>
+                <button type="button">Delete Todo</button>
               </div>
             );
           })}
