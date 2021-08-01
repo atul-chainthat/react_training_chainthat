@@ -24,7 +24,7 @@ const TodoList = ({ todoList, toggleTodo, deleteTodo, status }) => {
             </span>
             <button
               type="button"
-              disabled={status === "delete_data"}
+              disabled={ todo.isDone ? true : false }
               onClick={() => deleteTodo(todo)}
             >
               Delete Todo
